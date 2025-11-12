@@ -1,3 +1,5 @@
+.npmrc
+
 dist/
 !www/favicon.ico
 www/
@@ -14,7 +16,6 @@ log.txt
 
 .stencil/
 .idea/
-.vscode/
 .sass-cache/
 .versions/
 node_modules/
@@ -24,3 +25,4 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
+loader

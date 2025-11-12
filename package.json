@@ -1,42 +1,52 @@
 {
-	"name": "advertures-of-aron",
+	"name": "adventures-of-aron",
 	"private": true,
 	"version": "0.0.1",
-	"description": "portal",
+	"description": "Retro 2.5D adventure game.",
+	"author": "Simon Mika",
 	"license": "MIT",
-	"main": "./dist/index.cjs.js",
-	"types": "./dist/types/components.d.ts",
-	"collection": "./dist/collection/collection-manifest.json",
-	"module": "./dist/custom-elements/index.js",
-	"files": [
-		"dist/"
-	],
+	"repository": "https://github.com/simonmika/adventures-of-aron",
+	"bugs": {
+		"url": "https://github.com/simonmika/adventures-of-aron/issues"
+	},
+	"homepage": "https://simonmika.github.io/adventures-of-aron",
+	"git": {
+		"tagName": "v${version}"
+	},
+	"github": {
+		"release": true
+	},
+	"main": "dist/index.cjs.js",
+	"module": "dist/index.js",
+	"types": "dist/types/index.d.ts",
+	"collection": "dist/collection/collection-manifest.json",
 	"scripts": {
-		"build": "stencil build --prerender",
+		"build": "stencil build",
+		"check-dts": "git diff --exit-code src/components.d.ts || (echo '❌ components.d.ts is outdated! Run \"npm run build\" and commit the changes.' && exit 1)",
 		"start": "stencil build --dev --watch --serve",
-		"test": "vitest --run --allowOnly",
-		"coverage": "vitest --coverage",
-		"generate": "stencil generate",
 		"lint": "eslint 'src/**/*.{js,ts,tsx}'",
 		"fix": "eslint 'src/**/*.{js,ts,tsx}' --fix",
-		"clean": "rm -rf .stencil/ dist/ node_modules/ loader/ www/",
-		"test:browser": "vitest --config=vitest.browser.config.ts"
+		"test": "vitest --run --allowOnly --environment jsdom",
+		"coverage": "vitest --coverage",
+		"clean": "rm -rf .stencil/ dist/ node_modules/ loader/ www/"
 	},
 	"devDependencies": {
-		"@stencil/core": "^4.38.3",
-		"@types/jest": "^30.0.0",
-		"@types/puppeteer": "^5.4.7",
-		"@typescript-eslint/eslint-plugin": "^8.46.4",
-		"@typescript-eslint/parser": "^8.46.4",
-		"@vitest/coverage-istanbul": "^4.0.8",
-		"eslint": "^8.56.0",
+		"@stencil/core": "^4.35.0",
+		"@stencil/sass": "^3.2.1",
+		"@types/node": "^24.0.1",
+		"@types/pvutils": "^1.0.4",
+		"@typescript-eslint/eslint-plugin": "^8.34.0",
+		"@typescript-eslint/parser": "^8.34.0",
+		"@vitest/coverage-istanbul": "^3.2.3",
+		"eslint": "8.56.0",
 		"eslint-plugin-prettierx": "github:utily/eslint-plugin-prettierx#utily-20231004",
 		"eslint-plugin-simple-import-sort": "^12.1.1",
-		"happy-dom": "^20.0.10",
+		"jsdom": "^26.1.0",
 		"prettierx": "github:utily/prettierx#utily-20231004",
-		"puppeteer": "^24.29.1",
-		"typescript": "^5.9.3",
-		"vite": "^7.2.2",
-		"vitest": "^4.0.8"
+		"typescript": "5.8.3",
+		"vitest": "^3.2.3"
+	},
+	"dependencies": {
+		"isly": "^1.2.0"
 	}
 }

@@ -1,0 +1,43 @@
+{
+	"patterns": {
+		"component": {
+			"prefix": ["@Component"],
+			"body": [
+				"@Component({",
+				"\ttag: \"controvia-${1:feature}\",",
+				"\tstyleUrl: \"style.css\",",
+				"\tshadow: true,",
+				"})",
+				"export class ${2:Name} {",
+				"\t$0",
+				"}"
+			],
+			"description": "Create a new Stencil component following project guidelines"
+		},
+		"prop": {
+			"prefix": ["@Prop"],
+			"body": ["@Prop() ${1:name}${2:!}: ${3:type}"],
+			"description": "Add a prop to a component"
+		},
+		"state": {
+			"prefix": ["@State"],
+			"body": ["@State() ${1:name}: ${2:type}"],
+			"description": "Add state to a component"
+		}
+	},
+	"rules": {
+		"imports": {
+			"order": ["^@stencil/core$", "^isoly$", "^smoothly", "^\\.\\./"]
+		},
+		"style": {
+			"preferSelector": ":host",
+			"avoidClasses": true,
+			"useShadowDom": true
+		},
+		"naming": {
+			"componentPrefix": "controvia-",
+			"testSuffix": ".spec.tsx",
+			"styleFile": "style.css"
+		}
+	}
+}

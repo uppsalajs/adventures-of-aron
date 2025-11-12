@@ -1,17 +1,21 @@
 {
 	"compilerOptions": {
-		"target": "es2017",
-		"module": "esnext",
+		"skipLibCheck": true, // Workaround: https://github.com/ionic-team/ionicons/issues/1011#issuecomment-962038754
 		"allowSyntheticDefaultImports": true,
 		"allowUnreachableCode": false,
 		"declaration": false,
 		"experimentalDecorators": true,
-		"lib": [
-			"dom",
-			"es2017"
-		],
+		"lib": ["dom", "es2015"],
 		"moduleResolution": "node",
-		"noUnusedParameters": false,
+		"module": "esnext",
+		"target": "es2017",
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"jsx": "react",
+		"jsxFactory": "h",
+
+		"allowJs": true,
+		"esModuleInterop": true,
 		"noImplicitAny": true,
 		"removeComments": true,
 		"preserveConstEnums": true,
@@ -19,14 +23,9 @@
 		"noImplicitThis": true,
 		"strictNullChecks": true,
 		"sourceMap": true,
-		"resolveJsonModule": true,
-		"jsx": "react",
-		"jsxFactory": "h"
+		"outDir": "dist",
+		"resolveJsonModule": true
 	},
-	"include": [
-		"src"
-	],
-	"exclude": [
-		"node_modules"
-	]
+	"include": ["src"],
+	"exclude": ["node_modules"]
 }

@@ -2,40 +2,39 @@ import { defineConfig } from "vitest/config"
 
 export default defineConfig({
 	test: {
-		typecheck: {
-			tsconfig: "./tsconfig.json",
-		},
 		coverage: {
-			reporter: ["text", "json", "html"],
 			provider: "istanbul",
+			reporter: ["text", "json", "html"],
 		},
+		exclude: ["node_modules", "dist"],
 		globals: true,
-		environment: "happy-dom", // Use happy-dom for better ES module support
 		include: ["**/*.spec.[tj]s"],
-		testTimeout: 20000,
 		isolate: false,
-		exclude: ["node_modules", "dist", "www"],
 		server: {
 			deps: {
 				inline: [
 					"authly",
-					"isly",
-					"typedly",
 					"cloudly-analytics",
-					"cryptly",
-					"isoly",
 					"cloudly-http",
-					"sessionly",
-					"flagly",
-					"cloudly-storage",
 					"cloudly-rest",
-					"tidily",
-					"gracely",
 					"cloudly-router",
-					"selectively",
+					"cloudly-storage",
+					"cryptly",
+					"flagly",
+					"gracely",
+					"isly",
+					"isoly",
 					"langly",
+					"selectively",
+					"sessionly",
+					"tidily",
+					"typedly",
 				],
 			},
+		},
+		testTimeout: 20000,
+		typecheck: {
+			tsconfig: "./tsconfig.json",
 		},
 	},
 })

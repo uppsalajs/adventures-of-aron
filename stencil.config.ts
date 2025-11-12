@@ -1,18 +1,32 @@
+// tslint:disable-next-line: no-implicit-dependencies
 import { Config } from "@stencil/core"
-
-// https://stenciljs.com/docs/config
+import { sass } from "@stencil/sass"
 
 export const config: Config = {
 	namespace: "aron",
+	taskQueue: "async",
+	sourceMap: true,
 	globalStyle: "src/global/app.css",
 	globalScript: "src/global/app.ts",
-	taskQueue: "async",
 	outputTargets: [
 		{
+			type: "dist",
+			esmLoaderPath: "../loader",
+		},
+		{
+			type: "dist-custom-elements",
+			customElementsExportBehavior: "auto-define-custom-elements",
+			externalRuntime: false,
+			generateTypeDeclarations: true,
+		},
+		{
 			type: "www",
-			// comment the following line to disable service workers in production
-			serviceWorker: null,
-			baseUrl: "https://sample.binotype.org/",
+			serviceWorker: null, // disable service workers
+			buildDir: "",
 		},
 	],
+	devServer: {
+		openBrowser: false,
+	},
+	plugins: [sass()],
 }
