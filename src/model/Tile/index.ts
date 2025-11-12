@@ -1,14 +1,13 @@
+import "./Grass"
+import "./Gravel"
+import "./Water"
 import type { Map } from "../Map"
 import { Point } from "../Point"
 import { Base, types } from "./Base"
-import { Layer as _Layer } from "./Layer"
-import { Type as _Type } from "./Type"
-import { Rock } from "./Rock"
-
-import "./Grass"
-import "./Gravel"
 import { Forest as _Forest } from "./Forest"
-import "./Water"
+import { Layer as _Layer } from "./Layer"
+import { Rock } from "./Rock"
+import { Type as _Type } from "./Type"
 
 export type Tile = Base
 

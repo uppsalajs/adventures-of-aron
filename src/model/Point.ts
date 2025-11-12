@@ -14,7 +14,8 @@ export class Point {
 	}
 	move(direction: Direction, step: number | Size = 1) {
 		let result: Point
-		if (typeof step == "number") step = new Size(step, step)
+		if (typeof step == "number")
+			step = new Size(step, step)
 		switch (direction) {
 			case "left":
 				result = new Point(this.x - step.width, this.y)

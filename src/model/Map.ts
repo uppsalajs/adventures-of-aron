@@ -13,10 +13,13 @@ export class Map {
 		return this.tiles[position.y][position.x] ?? new Tile.Forest(position, this)
 	}
 	*slice(scope: Bounds): Generator<Tile> {
-		for (const point of scope.points()) yield this.get(point)
+		for (const point of scope.points())
+			yield this.get(point)
 	}
 	*layer(layer: Tile.Layer, scope: Bounds): Generator<Tile | undefined> {
-		for (const tile of this.slice(scope)) if (tile.layer == layer) yield tile
+		for (const tile of this.slice(scope))
+			if (tile.layer == layer)
+				yield tile
 	}
 	static load(data: Tile.Type[][]): Map {
 		return new Map(data)

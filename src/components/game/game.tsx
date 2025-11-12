@@ -368,7 +368,8 @@ export class AronGame implements ComponentWillLoad {
 				direction = "down"
 				break
 		}
-		if (direction) this.game = this.game.move(direction)
+		if (direction)
+			this.game = this.game.move(direction)
 	}
 	componentWillLoad(): void {
 		this.game = this.game.setViewport(new model.Size(window.innerWidth, window.innerHeight))

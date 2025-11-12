@@ -1,4 +1,4 @@
-import { Component, h, Prop, Host } from "@stencil/core"
+import { Component, h, Host, Prop } from "@stencil/core"
 import { model } from "../../model"
 import { graphics } from "./graphics"
 

@@ -1,7 +1,7 @@
-import { Type } from "./Type"
 import type { Map } from "../Map"
 import { Point } from "../Point"
 import { Layer } from "./Layer"
+import { Type } from "./Type"
 
 export abstract class Base {
 	abstract readonly type: Type
