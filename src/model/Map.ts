@@ -6,7 +6,9 @@ export class Map {
 	readonly size: { readonly width: number; readonly height: number }
 	private readonly tiles: readonly Tile[][]
 	constructor(...argument: [data: Tile.Type[][], items: Item[]] | [tiles: readonly Tile[][]]) {
-		this.tiles = argument[0].map((row, y) => row.map((type, x) => Tile.load(type, new Point(x, y), this)))
+		this.tiles = argument[0].map((row, y) =>
+			row.map((type, x) => (typeof type == "string" ? Tile.load(type, new Point(x, y), this) : type))
+		)
 		if (argument.length == 2)
 			for (const item of argument[1])
 				this.tiles[item.position.y][item.position.x] = this.tiles[item.position.y][item.position.x].place(item)
@@ -14,6 +16,11 @@ export class Map {
 	}
 	get(position: Point): Tile {
 		return this.tiles[position.y][position.x] ?? new Tile.Forest(position, this)
+	}
+	set(tile: Tile): Map {
+		const tiles = this.tiles.map(row => row.slice())
+		tiles[tile.position.y][tile.position.x] = tile
+		return new Map(tiles)
 	}
 	*layer(layer: Tile.Layer): Generator<Tile | undefined> {
 		for (const tile of this.tiles.flat())
