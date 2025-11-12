@@ -31,22 +31,22 @@
 		"clean": "rm -rf .stencil/ dist/ node_modules/ loader/ www/"
 	},
 	"devDependencies": {
-		"@stencil/core": "^4.35.0",
-		"@stencil/sass": "^3.2.1",
-		"@types/node": "^24.0.1",
+		"@stencil/core": "^4.38.3",
+		"@stencil/sass": "^3.2.3",
+		"@types/node": "^24.10.1",
 		"@types/pvutils": "^1.0.4",
 		"@typescript-eslint/eslint-plugin": "^8.34.0",
 		"@typescript-eslint/parser": "^8.34.0",
-		"@vitest/coverage-istanbul": "^3.2.3",
+		"@vitest/coverage-istanbul": "^4.0.8",
 		"eslint": "8.56.0",
 		"eslint-plugin-prettierx": "github:utily/eslint-plugin-prettierx#utily-20231004",
 		"eslint-plugin-simple-import-sort": "^12.1.1",
-		"jsdom": "^26.1.0",
+		"jsdom": "^27.2.0",
 		"prettierx": "github:utily/prettierx#utily-20231004",
-		"typescript": "5.8.3",
-		"vitest": "^3.2.3"
+		"typescript": "5.9.3",
+		"vitest": "^4.0.8"
 	},
 	"dependencies": {
-		"isly": "^1.2.0"
+		"isly": "^1.4.0"
 	}
 }
