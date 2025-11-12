@@ -7,9 +7,12 @@ export class Game {
 	constructor(readonly map: Map, readonly hero: Hero) {}
 
 	move(direction: Direction): Game {
-		const hero = this.hero.move(direction)
+		let hero = this.hero.move(direction)
 		const tile = this.map.get(hero.position)
-		return tile?.walkable ? new Game(this.map, hero) : this
+		if (!tile.walkable)
+			hero = this.hero.face(direction)
+		const map = tile.walkable && tile.item ? this.map.set(tile.collect()) : this.map
+		return new Game(map, hero)
 	}
 	static async fetch(url: string): Promise<Game | undefined> {
 		const level = await (await fetch(url)).json()

@@ -5,10 +5,11 @@ import { Tile } from "./Tile"
 export class Map {
 	readonly size: { readonly width: number; readonly height: number }
 	private readonly tiles: readonly Tile[][]
-	constructor(data: Tile.Type[][], items: Item[] = []) {
-		this.tiles = data.map((row, y) => row.map((type, x) => Tile.load(type, new Point(x, y), this)))
-		for (const item of items)
-			this.tiles[item.position.y][item.position.x] = this.tiles[item.position.y][item.position.x].place(item)
+	constructor(...argument: [data: Tile.Type[][], items: Item[]] | [tiles: readonly Tile[][]]) {
+		this.tiles = argument[0].map((row, y) => row.map((type, x) => Tile.load(type, new Point(x, y), this)))
+		if (argument.length == 2)
+			for (const item of argument[1])
+				this.tiles[item.position.y][item.position.x] = this.tiles[item.position.y][item.position.x].place(item)
 		this.size = { width: this.tiles[0].length, height: this.tiles.length }
 	}
 	get(position: Point): Tile {
