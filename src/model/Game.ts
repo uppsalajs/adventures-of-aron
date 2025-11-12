@@ -13,7 +13,6 @@ export class Game {
 	}
 	static async fetch(url: string): Promise<Game | undefined> {
 		const level = await (await fetch(url)).json()
-		console.log("Fetched level:", level, Level.flawed(level))
 		return Level.is(level) ? Level.load(level) : undefined
 	}
 }

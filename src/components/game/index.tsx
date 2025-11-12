@@ -39,6 +39,7 @@ export class AronGame implements ComponentWillLoad {
 				) : (
 					<Fragment>
 						<aron-layer layer="ground" map={this.game.map}></aron-layer>
+						<aron-items map={this.game.map}></aron-items>
 						<aron-hero hero={this.game.hero}></aron-hero>
 						<aron-layer layer="canopy" map={this.game.map}></aron-layer>
 					</Fragment>

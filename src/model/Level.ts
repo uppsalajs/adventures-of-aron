@@ -20,6 +20,8 @@ export namespace Level {
 		})
 		.bind()
 	export function load(data: Level): Game {
-		return new Game(new Map(data.map), new Hero(new Point(data.start.x, data.start.y)))
+		const items = data.items.map(item => new Item(item.type as Item.Type, new Point(item.position.x, item.position.y)))
+		const map = new Map(data.map, items)
+		return new Game(map, new Hero(new Point(data.start.x, data.start.y)))
 	}
 }

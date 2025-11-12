@@ -18,5 +18,41 @@
 		["forest", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "forest"],
 		["forest", "forest", "forest", "forest", "forest", "forest", "forest", "forest", "forest", "forest"]
 	],
-	"items": []
+	"items": [
+		{
+			"type": "coin",
+			"position": {
+				"x": 7,
+				"y": 2
+			}
+		},
+		{
+			"type": "coin",
+			"position": {
+				"x": 7,
+				"y": 3
+			}
+		},
+		{
+			"type": "coin",
+			"position": {
+				"x": 7,
+				"y": 4
+			}
+		},
+		{
+			"type": "coin",
+			"position": {
+				"x": 7,
+				"y": 5
+			}
+		},
+		{
+			"type": "coin",
+			"position": {
+				"x": 7,
+				"y": 6
+			}
+		}
+	]
 }

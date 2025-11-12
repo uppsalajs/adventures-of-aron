@@ -13,6 +13,12 @@ export namespace Components {
     interface AronHero {
         "hero": model.Hero;
     }
+    interface AronItem {
+        "item": model.Item;
+    }
+    interface AronItems {
+        "map": model.Map;
+    }
     interface AronLayer {
         "layer": model.Tile.Layer;
         "map": model.Map;
@@ -34,6 +40,18 @@ declare global {
         prototype: HTMLAronHeroElement;
         new (): HTMLAronHeroElement;
     };
+    interface HTMLAronItemElement extends Components.AronItem, HTMLStencilElement {
+    }
+    var HTMLAronItemElement: {
+        prototype: HTMLAronItemElement;
+        new (): HTMLAronItemElement;
+    };
+    interface HTMLAronItemsElement extends Components.AronItems, HTMLStencilElement {
+    }
+    var HTMLAronItemsElement: {
+        prototype: HTMLAronItemsElement;
+        new (): HTMLAronItemsElement;
+    };
     interface HTMLAronLayerElement extends Components.AronLayer, HTMLStencilElement {
     }
     var HTMLAronLayerElement: {
@@ -49,6 +67,8 @@ declare global {
     interface HTMLElementTagNameMap {
         "aron-game": HTMLAronGameElement;
         "aron-hero": HTMLAronHeroElement;
+        "aron-item": HTMLAronItemElement;
+        "aron-items": HTMLAronItemsElement;
         "aron-layer": HTMLAronLayerElement;
         "aron-tile": HTMLAronTileElement;
     }
@@ -58,6 +78,12 @@ declare namespace LocalJSX {
     }
     interface AronHero {
         "hero"?: model.Hero;
+    }
+    interface AronItem {
+        "item"?: model.Item;
+    }
+    interface AronItems {
+        "map"?: model.Map;
     }
     interface AronLayer {
         "layer"?: model.Tile.Layer;
@@ -69,6 +95,8 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "aron-game": AronGame;
         "aron-hero": AronHero;
+        "aron-item": AronItem;
+        "aron-items": AronItems;
         "aron-layer": AronLayer;
         "aron-tile": AronTile;
     }
@@ -79,6 +107,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "aron-game": LocalJSX.AronGame & JSXBase.HTMLAttributes<HTMLAronGameElement>;
             "aron-hero": LocalJSX.AronHero & JSXBase.HTMLAttributes<HTMLAronHeroElement>;
+            "aron-item": LocalJSX.AronItem & JSXBase.HTMLAttributes<HTMLAronItemElement>;
+            "aron-items": LocalJSX.AronItems & JSXBase.HTMLAttributes<HTMLAronItemsElement>;
             "aron-layer": LocalJSX.AronLayer & JSXBase.HTMLAttributes<HTMLAronLayerElement>;
             "aron-tile": LocalJSX.AronTile & JSXBase.HTMLAttributes<HTMLAronTileElement>;
         }
