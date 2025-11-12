@@ -12,10 +12,10 @@ export class AronTile {
 		return (
 			<Host
 				style={{
-					left: (this.tile?.position.x * 64).toString() + "px",
-					top: (this.tile?.position.y * 64).toString() + "px",
+					left: (this.tile.position.x * 64).toString() + "px",
+					top: (this.tile.position.y * 64).toString() + "px",
 				}}>
-				<img src={`/assets/tiles/${this.tile.type}.svg`} alt="" />
+				<img src={`/assets/tiles/${this.tile.type}.svg`} />
 			</Host>
 		)
 	}
