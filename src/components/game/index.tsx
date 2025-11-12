@@ -1,4 +1,5 @@
-import { Component, h, Host } from "@stencil/core"
+import { Component, h, Host, State } from "@stencil/core"
+import { model } from "../../model"
 
 @Component({
 	tag: "aron-game",
@@ -6,7 +7,12 @@ import { Component, h, Host } from "@stencil/core"
 	scoped: true,
 })
 export class AronGame {
+	@State() game: model.Game = model.Game.create("forest")
 	render() {
-		return <Host>Adventure of Aron</Host>
+		return (
+			<Host>
+				<aron-layer layer="canopy" map={this.game.map}></aron-layer>
+			</Host>
+		)
 	}
 }

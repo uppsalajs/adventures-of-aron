@@ -5,8 +5,20 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { model } from "./model/index";
+export { model } from "./model/index";
 export namespace Components {
     interface AronGame {
+    }
+    interface AronHero {
+        "hero": model.Hero;
+    }
+    interface AronLayer {
+        "layer": model.Tile.Layer;
+        "map": model.Map;
+    }
+    interface AronTile {
+        "tile": model.Tile;
     }
 }
 declare global {
@@ -16,15 +28,49 @@ declare global {
         prototype: HTMLAronGameElement;
         new (): HTMLAronGameElement;
     };
+    interface HTMLAronHeroElement extends Components.AronHero, HTMLStencilElement {
+    }
+    var HTMLAronHeroElement: {
+        prototype: HTMLAronHeroElement;
+        new (): HTMLAronHeroElement;
+    };
+    interface HTMLAronLayerElement extends Components.AronLayer, HTMLStencilElement {
+    }
+    var HTMLAronLayerElement: {
+        prototype: HTMLAronLayerElement;
+        new (): HTMLAronLayerElement;
+    };
+    interface HTMLAronTileElement extends Components.AronTile, HTMLStencilElement {
+    }
+    var HTMLAronTileElement: {
+        prototype: HTMLAronTileElement;
+        new (): HTMLAronTileElement;
+    };
     interface HTMLElementTagNameMap {
         "aron-game": HTMLAronGameElement;
+        "aron-hero": HTMLAronHeroElement;
+        "aron-layer": HTMLAronLayerElement;
+        "aron-tile": HTMLAronTileElement;
     }
 }
 declare namespace LocalJSX {
     interface AronGame {
     }
+    interface AronHero {
+        "hero"?: model.Hero;
+    }
+    interface AronLayer {
+        "layer"?: model.Tile.Layer;
+        "map"?: model.Map;
+    }
+    interface AronTile {
+        "tile"?: model.Tile;
+    }
     interface IntrinsicElements {
         "aron-game": AronGame;
+        "aron-hero": AronHero;
+        "aron-layer": AronLayer;
+        "aron-tile": AronTile;
     }
 }
 export { LocalJSX as JSX };
@@ -32,6 +78,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "aron-game": LocalJSX.AronGame & JSXBase.HTMLAttributes<HTMLAronGameElement>;
+            "aron-hero": LocalJSX.AronHero & JSXBase.HTMLAttributes<HTMLAronHeroElement>;
+            "aron-layer": LocalJSX.AronLayer & JSXBase.HTMLAttributes<HTMLAronLayerElement>;
+            "aron-tile": LocalJSX.AronTile & JSXBase.HTMLAttributes<HTMLAronTileElement>;
         }
     }
 }
