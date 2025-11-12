@@ -1,6 +1,6 @@
 import { Point } from "../Point"
 import { Tile } from "../Tile"
-import { maps } from "./maps"
+import { levels } from "./levels"
 
 export class Map {
 	readonly size: { readonly width: number; readonly height: number }
@@ -17,8 +17,10 @@ export class Map {
 			if (tile.layer == layer)
 				yield tile
 	}
-	static load(name: keyof typeof maps): Map {
-		return new Map(maps[name])
+	static load(level: Map.Level): Map {
+		return new Map(levels[level])
 	}
 }
-export namespace Map {}
+export namespace Map {
+	export type Level = keyof typeof levels
+}
