@@ -9,6 +9,14 @@ import { model } from "../../model/index"
 export class AronHero {
 	@Prop() hero: model.Hero
 	render() {
-		return <Host></Host>
+		return (
+			<Host
+				style={{
+					left: (this.hero.position.x * 64).toString() + "px",
+					top: (this.hero.position.y * 64).toString() + "px",
+				}}>
+				<img src={`/assets/hero/down.svg`} />
+			</Host>
+		)
 	}
 }

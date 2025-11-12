@@ -12,6 +12,7 @@ export class AronGame {
 		return (
 			<Host>
 				<aron-layer layer="ground" map={this.game.map}></aron-layer>
+				<aron-hero hero={this.game.hero}></aron-hero>
 				<aron-layer layer="canopy" map={this.game.map}></aron-layer>
 			</Host>
 		)
