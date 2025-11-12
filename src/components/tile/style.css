@@ -1,0 +1,9 @@
+:host {
+	display: block;
+	position: absolute;
+}
+
+:host>img {
+	margin-left: -64px;
+	margin-top: -64px;
+}

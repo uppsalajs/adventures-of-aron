@@ -1,4 +1,38 @@
+import { isly } from "isly"
+import { Direction } from "./Direction"
+import { Size } from "./Size"
+
 export class Point {
 	constructor(public x: number, public y: number) {}
+	move(direction: Direction, step: number | Size = 1) {
+		let result: Point
+		if (typeof step == "number")
+			step = new Size(step, step)
+		switch (direction) {
+			case "left":
+				result = new Point(this.x - step.width, this.y)
+				break
+			case "right":
+				result = new Point(this.x + step.width, this.y)
+				break
+			case "up":
+				result = new Point(this.x, this.y - step.height)
+				break
+			case "down":
+				result = new Point(this.x, this.y + step.height)
+				break
+		}
+		return result
+	}
+	toString(): string {
+		return `${this.x}, ${this.y}`
+	}
 }
-export namespace Point {}
+export namespace Point {
+	export const { is, flawed, type } = isly
+		.object<{ x: number; y: number }>({
+			x: isly.number(),
+			y: isly.number(),
+		})
+		.bind()
+}
