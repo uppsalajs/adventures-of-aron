@@ -15,7 +15,7 @@ export class AronHero {
 					left: (this.hero.position.x * 64).toString() + "px",
 					top: (this.hero.position.y * 64).toString() + "px",
 				}}>
-				<img src={`/assets/hero/down.svg`} />
+				<img src={`/assets/hero/${this.hero.facing}.svg`} />
 			</Host>
 		)
 	}
