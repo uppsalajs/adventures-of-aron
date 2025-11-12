@@ -4,7 +4,7 @@ import { graphics } from "./graphics"
 
 @Component({
 	tag: "aron-hero",
-	styleUrl: "hero.css",
+	styleUrl: "style.css",
 	scoped: true,
 })
 export class AronHero {

@@ -3,7 +3,7 @@ import { model } from "../../model"
 
 @Component({
 	tag: "aron-game",
-	styleUrl: "game.css",
+	styleUrl: "style.css",
 	scoped: true,
 })
 export class AronGame implements ComponentWillLoad {

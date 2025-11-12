@@ -4,7 +4,7 @@ import { graphics } from "./graphics"
 
 @Component({
 	tag: "aron-tile",
-	styleUrl: "tile.css",
+	styleUrl: "style.css",
 	scoped: true,
 })
 export class AronTile {
