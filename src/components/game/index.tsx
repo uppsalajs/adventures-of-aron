@@ -7,10 +7,11 @@ import { model } from "../../model"
 	scoped: true,
 })
 export class AronGame {
-	@State() game: model.Game = model.Game.create("forest")
+	@State() game: model.Game = model.Game.create("level0")
 	render() {
 		return (
 			<Host>
+				<aron-layer layer="ground" map={this.game.map}></aron-layer>
 				<aron-layer layer="canopy" map={this.game.map}></aron-layer>
 			</Host>
 		)
