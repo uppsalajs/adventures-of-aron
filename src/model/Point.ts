@@ -1,3 +1,4 @@
+import { isly } from "isly"
 import { Direction } from "./Direction"
 import { Size } from "./Size"
 
@@ -36,4 +37,11 @@ export class Point {
 		return `${this.x}, ${this.y}`
 	}
 }
-export namespace Point {}
+export namespace Point {
+	export const { is, flawed, type } = isly
+		.object<{ x: number; y: number }>({
+			x: isly.number(),
+			y: isly.number(),
+		})
+		.bind()
+}

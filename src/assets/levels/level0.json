@@ -1,0 +1,22 @@
+{
+	"start": {
+		"x": 3,
+		"y": 3
+	},
+	"map": [
+		["forest", "forest", "forest", "forest", "forest", "forest", "forest", "forest", "forest", "forest"],
+		["forest", "gravel", "gravel", "gravel", "gravel", "forest", "gravel", "gravel", "gravel", "forest"],
+		["forest", "gravel", "gravel", "gravel", "gravel", "forest", "gravel", "gravel", "gravel", "forest"],
+		["forest", "gravel", "gravel", "gravel", "gravel", "forest", "gravel", "gravel", "gravel", "forest"],
+		["forest", "gravel", "gravel", "gravel", "gravel", "forest", "gravel", "gravel", "gravel", "forest"],
+		["forest", "gravel", "gravel", "gravel", "gravel", "forest", "gravel", "gravel", "gravel", "forest"],
+		["forest", "gravel", "gravel", "gravel", "gravel", "forest", "gravel", "gravel", "gravel", "forest"],
+		["forest", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "forest"],
+		["forest", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "forest"],
+		["forest", "forest", "forest", "gravel", "gravel", "gravel", "forest", "forest", "forest", "forest"],
+		["forest", "gravel", "forest", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "forest"],
+		["forest", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "gravel", "forest"],
+		["forest", "forest", "forest", "forest", "forest", "forest", "forest", "forest", "forest", "forest"]
+	],
+	"items": []
+}

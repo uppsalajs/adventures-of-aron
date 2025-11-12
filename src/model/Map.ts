@@ -1,11 +1,10 @@
-import { Point } from "../Point"
-import { Tile } from "../Tile"
-import { levels } from "./levels"
+import { Point } from "./Point"
+import { Tile } from "./Tile"
 
 export class Map {
 	readonly size: { readonly width: number; readonly height: number }
 	private readonly tiles: readonly Tile[][]
-	private constructor(data: Tile.Type[][]) {
+	constructor(data: Tile.Type[][]) {
 		this.tiles = data.map((row, y) => row.map((type, x) => Tile.load(type, new Point(x, y), this)))
 		this.size = { width: this.tiles[0].length, height: this.tiles.length }
 	}
@@ -17,10 +16,5 @@ export class Map {
 			if (tile.layer == layer)
 				yield tile
 	}
-	static load(level: Map.Level): Map {
-		return new Map(levels[level])
-	}
 }
-export namespace Map {
-	export type Level = keyof typeof levels
-}
+export namespace Map {}
